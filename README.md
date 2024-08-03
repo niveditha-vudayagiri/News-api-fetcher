@@ -1,6 +1,6 @@
-# AI News Aggregator
+# AI News Fetcher
 
-AI News Aggregator is a Django-based web application that fetches and displays articles related to "Artificial Intelligence" using Google Search API and NewsAPI. This project demonstrates the integration of multiple APIs within a Django framework to provide a seamless user experience for accessing the latest AI news.
+AI News Fetcher is a Django-based web application that fetches and displays articles related to "Artificial Intelligence" using Google Search API and NewsAPI. This project demonstrates the integration of multiple APIs within a Django framework to provide a seamless user experience for accessing the latest AI news.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
