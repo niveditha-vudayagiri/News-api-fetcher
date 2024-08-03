@@ -1,3 +1,4 @@
 venv/
 ai_article_fetcher/ENV_DIR/*
 **/__pycache__/
+.env
