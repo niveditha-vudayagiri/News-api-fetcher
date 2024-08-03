@@ -1,0 +1,67 @@
+{% include 'header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <body>
+        <!-- Top News Start-->
+        <div class="top-news">
+            <div class="container">
+                <div class="row">
+                    <div class="tn-left">
+                        <div class="row tn-slider">
+                            {% for title, desc, link, publisher, image in articles %}
+                            {% if forloop.counter0|divisibleby:3 %}
+                                </div><div class="row tn-slider">
+                            {% endif %}
+                            <div class="col-md-4">
+                                <div class="tn-img">
+                                    <img src="{{image}}" alt="Image for {{title}}" />
+                                    <div class="tn-title">
+                                        <a href="{{link}}" target="_blank">{{title}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Pagination Start-->
+        <div class="pagination">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                    {% if page > 1 %}
+                        <a href="?page={{ page|add:"-1" }}">Previous Page</a>
+                    {% endif %}
+                    </div>
+                    <div class="col-lg-6">
+                    {% if has_next %}
+                        <a href="?page={{ page|add:"1" }}"><p align="right">Next Page</p></a>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination Ends-->
+        <!-- Top News End-->
+
+        
+        {% include 'footer.html' %}
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

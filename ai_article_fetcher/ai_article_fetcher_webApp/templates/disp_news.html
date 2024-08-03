@@ -1,0 +1,72 @@
+{% include 'header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">News</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+        
+        <!-- Single News Start-->
+        <div class="single-news">
+            <div class="container">
+                <div class="row sn-slider">
+                    <div class="col-lg-8">
+                        <div class="sn-container">
+                            <div class="sn-content">
+                                {% for title, description, link, author,image in news %}
+                                    <div class="sn-img">
+                                    <img src="{{image}}" alt="Image for {{title}}" />
+                                    <div class="tn-title">
+                                        <a href="{{link}}" target="_blank">{{title}}</a>
+                                        <p>{{description}}fdsfdgw</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="sidebar">
+                            <div class="sidebar-widget">
+                                <h2 class="sw-title">In This Category</h2>
+                                <div class="news-list">
+                                    {% for title, description, link, author, time in headlines %}
+                                    <div class="nl-item">
+                                        <div class="nl-title">
+                                            <a href="{{link}}">{{title}}</a>
+                                        </div>
+                                        <br/>
+                                    </div>
+                                    {% endfor %}
+                                    
+                                </div>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single News End-->        
+        {% include 'footer.html' %}
+
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
